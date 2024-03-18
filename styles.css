@@ -43,6 +43,10 @@ button:hover {
     background-color: #0056b3; /* Gombháttérszín, ha ráviszünk */
 }
 
+img {
+    max-width: 100%; /* Képek max. szélessége 100%-ra állítva */
+}
+
 /* Reagáló dizájn */
 
 @media (max-width: 768px) {
@@ -51,3 +55,4 @@ button:hover {
         background-color: #ffffff; /* Más háttérszín telefonon */
     }
 }
+
