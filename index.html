@@ -61,7 +61,19 @@
             }
         }
 
-        // Implementálj a többi zenész történetét hasonló módon
+       function szendroiCsabaStory() {
+        document.getElementById('story').style.display = "block";
+        document.getElementById('story').innerHTML = "<p>Szendrői Csabával, az Elefánt énekesével találkoztál!</p><p>Szendrői Csaba: Helló! Mit szólnál, ha felolvasnám neked a kedvenc versem a Féyn című kötetemből?</p><button onclick='tellStory(true)'>Olvasd, Csabi</button><button onclick='tellStory(false)'>Nem vagyok verses kedvemben</button>";
+        document.getElementById('back-button').style.display = "block";
+    }
+
+    function tellStory(wantToHear) {
+        if (wantToHear) {
+            document.getElementById('story').innerHTML = "<p>Ezt a verset</br>azért írtam,</br>mert hallani akartam</br>sercegni a ceruzát a papíron.</br></br>Ennek a versnek</br>nincs mondanivalója.</br>Ennek a versnek</br>értelme van.</br></br>Na, köszi, hogy benéztél, de most megyek, le kell mosnom Babakéket.</p>";
+        } else {
+            document.getElementById('story').innerHTML = "<p>Viszlát, Csabi!</p>";
+        }
+    }
 
     </script>
 </body>
