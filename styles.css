@@ -6,7 +6,7 @@ body {
     background-image: url('hatterkep.png'); /* Háttérkép URL-je */
     background-position: center bottom; /* Háttérkép pozíciója: középen alul */
     background-repeat: no-repeat; /* Háttérkép ne ismétlődjön */
-    background-size: cover; /* Háttérkép mérete: kitölti a teljes ablakot */
+    background-size: contain; /* Háttérkép mérete: kitölti a rendelkezésre álló területet */
 }
 
 h1, p, select, button, #story {
