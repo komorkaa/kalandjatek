@@ -102,7 +102,19 @@ function csepellaOlivertellStory(wantToHear) {
         document.getElementById('story').innerHTML = "<p>Viszlát, Olivér!</p>";
     }
 }
-        
+        function krubiStory() {
+    document.getElementById('story').style.display = "block";
+    document.getElementById('story').innerHTML = "<p>\nÖsszefutottál Krúbival, aki éppen egy vödörrel a fején próbál beleolvadni a környezetébe, de ezt a sármot nem tudod nem felismerni</p><p>Krúbi: Szia, figyelj, most annyira nem tudok beszélni</p><button onclick='krubitellStory(true)'>Miért bujkálsz, Krúbi?</button><button onclick='krubitellStory(false)'>Rendben, jó bujkálást</button>";
+    document.getElementById('back-button').style.display = "block";
+}
+
+function krubitellStory(wantToHear) {
+    if (wantToHear) {
+        document.getElementById('story').innerHTML = "<p>Már megint egy Fonogramot akarnak rám sózni, nem értik, hogy nem kell. Légyszi, segíts elrejtőzni!</p>";
+    } else {
+        document.getElementById('story').innerHTML = "<p>Rendben, jó bujkálást!</p>";
+    }
+}
     </script>
 </body>
 </html>
