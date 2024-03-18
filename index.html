@@ -11,23 +11,19 @@
     <p>Induljunk el!</p>
     <button onclick="startGame()">Kezdés</button>
 
+    <div id="game" style="display:none;">
+        <!-- Itt fog megjelenni a játék -->
+    </div>
+
     <script>
         function startGame() {
             var playerName = prompt("Kérlek, add meg a neved:");
-            alert("Üdvözöllek, " + playerName + "! Válassz egy frontembert, akivel találkozni szeretnél!");
-            showMusicians();
+            document.getElementById('game').innerHTML = "<p>Üdvözöllek, " + playerName + "! Válassz egy frontembert, akivel találkozni szeretnél!</p>";
+            document.getElementById('game').innerHTML += "<select id='musician-choice'><option value='1'>Beck Zoli (30y)</option><option value='2'>Szendrői Csaba (Elefánt)</option><option value='3'>Bérczesi Robi (hiperkarma)</option><option value='4'>Csepella Olivér (Csaknekedkislány)</option><option value='5'>Krúbi</option></select><button onclick='showMusicians()'>Választ</button>";
         }
 
         function showMusicians() {
-            var musicians = [
-                "Beck Zoli (30y)",
-                "Szendrői Csaba (Elefánt)",
-                "Bérczesi Robi (hiperkarma)",
-                "Csepella Olivér (Csaknekedkislány)",
-                "Krúbi"
-            ];
-
-            var musicianChoice = prompt("Válassz egy frontembert a következők közül:\n" + musicians.join("\n") + "\n(q - Kilépés)");
+            var musicianChoice = document.getElementById('musician-choice').value;
 
             switch (musicianChoice) {
                 case '1':
@@ -45,32 +41,22 @@
                 case '5':
                     krubi();
                     break;
-                case 'q':
-                    alert("Viszlát!");
-                    break;
                 default:
                     alert("Nem értem, próbáld újra!");
-                    showMusicians();
             }
         }
 
         function beckZoli() {
-            alert("Beck Zolival, a 30y énekesével találkoztál!");
-            var choice = prompt("Beck Zoli: Heló! Ha van egy kis időd, akkor elmesélhetem a házunk történetét, mit szólsz?\n1. Meghallgatom, Zoli\n2. Ajaj, ennyi időm azért nincs, bocsi");
+            document.getElementById('game').innerHTML = "<p>Beck Zolival, a 30y énekesével találkoztál!</p>";
+            document.getElementById('game').innerHTML += "<p>Beck Zoli: Heló! Ha van egy kis időd, akkor elmesélhetem a házunk történetét, mit szólsz?</p><button onclick='tellStory()'>Meghallgatom, Zoli</button><button onclick='goodbyeZoli()'>Ajaj, ennyi időm azért nincs, bocsi</button>";
+        }
 
-            switch (choice) {
-                case '1':
-                    alert("Beck Zoli: Hát én panel gyerek vagyok, panelbe' nőttem föl, csajom is panel, nem laktunk soha máshol, csak panel lakásba', és állatira akartuk, hogy egyszer legyen egy ilyen házunk.");
-                    break;
-                case '2':
-                    alert("Viszlát, Zoli!");
-                    break;
-                default:
-                    alert("Nem értem, próbáld újra!");
-                    beckZoli();
-            }
+        function tellStory() {
+            document.getElementById('game').innerHTML = "<p>Hát én panel gyerek vagyok, panelbe' nőttem föl, csajom is panel, nem laktunk soha máshol, csak panel lakásba', és állatira akartuk, hogy egyszer legyen egy ilyen házunk.</p>";
+        }
 
-            showMusicians();
+        function goodbyeZoli() {
+            document.getElementById('game').innerHTML = "<p>Viszlát, Zoli!</p>";
         }
 
         // Implementáld a többi zenész függvényét hasonló módon
