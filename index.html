@@ -87,6 +87,20 @@
             document.getElementById('story').innerHTML = "<p>Viszlát, Robi!</p>";
         }
     }
+         function csepellaOliverStory() {
+        document.getElementById('story').style.display = "block";
+        document.getElementById('story').innerHTML = "<p>Csepella Olivérrel, a Csaknekedkislány énekesével találkoztál!</p><p>Csepella Olivér: Helló! Gondolom tudod rólam, hogy grafikus vagyok, de nem biztos, hogy ismered a diplomázásom pontos sztoriját, pedig vicces. Elmeséljem?</p><button onclick='tellStory(true)'>Mesélj, Olivér</button><button onclick='tellStory(false)'>Tulajdonképpen már hallottam</button>";
+        document.getElementById('back-button').style.display = "block";
+    }
+
+    function tellStory(wantToHear) {
+        if (wantToHear) {
+            document.getElementById('story').innerHTML = "<p>Szerettem volna képregénnyel diplomázni, aztán mikor le kellett adni, hogy ugye akkor mivel diplomázunk, konkrétan mit vállalunk, stb., akkor így elbizonytalanodtam, hogy biztos, hogy így meg tudom-e csinálni, meg ilyenek. Igazából jogosan bizonytalanodtam el, merhogy' így a védés reggelén nyolc órakor lett kész a cucc, de úgy, hogy segítettek a színezéssel azok, akiknek mittomén' év közben nyomtattam, vagy csak simán jófejek voltak. A mai napig lassan dolgozom, úgyhogy ha tovább folytatom a sztorizást, gondolom megint nem fogok aludni.</p>";
+        } else {
+            document.getElementById('story').innerHTML = "<p>Viszlát, Olivér!</p>";
+        }
+    }
+        
     </script>
 </body>
 </html>
