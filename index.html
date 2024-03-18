@@ -7,9 +7,9 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h1>Üdvözöllek Komorka Kalandjátékában!</h1>
-    <p>Idén végre eljutottál a Fishing on Orfűre, nézzük, kivel futhatsz össze, miközben hajnali kettőkor gyrost vadászol!</p>
-    <p>Induljunk el!</p>
+    <h1>Üdvözöllek Komorka Kalandjátékában!</br></h1>
+    <p>Idén végre eljutottál a Fishing on Orfűre, nézzük, kivel futhatsz össze, miközben hajnali kettőkor gyrost vadászol!</br></p>
+    <p>Induljunk el!</br></p>
 
     <div id="game">
         <select id="musician-choice">
@@ -28,7 +28,7 @@
         var visitorCount = localStorage.getItem('visitorCount') || 0;
         visitorCount++;
         localStorage.setItem('visitorCount', visitorCount);
-        document.write("<p>(Egyébként te az ennyiedik itt csellengő vagy: " + visitorCount + ")</p>");
+        document.write("<p></br></br>(Egyébként te az ennyiedik itt csellengő vagy: " + visitorCount + ")</p>");
         
         function showMusicianStory() {
             var musicianChoice = document.getElementById('musician-choice').value;
