@@ -9,71 +9,59 @@
     <h1>Üdvözöllek Komorka Kalandjátékában!</h1>
     <p>Idén végre eljutottál a Fishing on Orfűre, nézzük, kivel futhatsz össze, miközben hajnali kettőkor gyrost vadászol!</p>
     <p>Induljunk el!</p>
-    <button onclick="startGame()">Kezdés</button>
+
+    <div id="game">
+        <select id="musician-choice">
+            <option value="1">Beck Zoli (30y)</option>
+            <option value="2">Szendrői Csaba (Elefánt)</option>
+            <option value="3">Bérczesi Robi (hiperkarma)</option>
+            <option value="4">Csepella Olivér (Csaknekedkislány)</option>
+            <option value="5">Krúbi</option>
+        </select>
+        <button onclick="showMusicianStory()">Választ</button>
+    </div>
+
+    <div id="story" style="display:none;"></div>
 
     <script>
-        function startGame() {
-            var playerName = prompt("Kérlek, add meg a neved:");
-            alert("Üdvözöllek, " + playerName + "! Válassz egy frontembert, akivel találkozni szeretnél!");
-            showMusicians();
-        }
-
-        function showMusicians() {
-            var musicians = [
-                "Beck Zoli (30y)",
-                "Szendrői Csaba (Elefánt)",
-                "Bérczesi Robi (hiperkarma)",
-                "Csepella Olivér (Csaknekedkislány)",
-                "Krúbi"
-            ];
-
-            var musicianChoice = prompt("Válassz egy frontembert a következők közül:\n" + musicians.join("\n") + "\n(q - Kilépés)");
+        function showMusicianStory() {
+            var musicianChoice = document.getElementById('musician-choice').value;
 
             switch (musicianChoice) {
                 case '1':
-                    beckZoli();
+                    beckZoliStory();
                     break;
                 case '2':
-                    szendroiCsaba();
+                    szendroiCsabaStory();
                     break;
                 case '3':
-                    berczesiRobi();
+                    berczesiRobiStory();
                     break;
                 case '4':
-                    csepellaOliver();
+                    csepellaOliverStory();
                     break;
                 case '5':
-                    krubi();
-                    break;
-                case 'q':
-                    alert("Viszlát!");
+                    krubiStory();
                     break;
                 default:
                     alert("Nem értem, próbáld újra!");
-                    showMusicians();
             }
         }
 
-        function beckZoli() {
-            alert("Beck Zolival, a 30y énekesével találkoztál!");
-            var choice = prompt("Beck Zoli: Heló! Ha van egy kis időd, akkor elmesélhetem a házunk történetét, mit szólsz?\n1. Meghallgatom, Zoli\n2. Ajaj, ennyi időm azért nincs, bocsi");
-
-            switch (choice) {
-                case '1':
-                    alert("Beck Zoli: Hát én panel gyerek vagyok, panelbe' nőttem föl, csajom is panel, nem laktunk soha máshol, csak panel lakásba', és állatira akartuk, hogy egyszer legyen egy ilyen házunk.");
-                    break;
-                case '2':
-                    alert("Viszlát, Zoli!");
-                    break;
-                default:
-                    alert("Nem értem, próbáld újra!");
-                    beckZoli();
-            }
-
-            showMusicians();
+        function beckZoliStory() {
+            document.getElementById('story').style.display = "block";
+            document.getElementById('story').innerHTML = "<p>Beck Zolival, a 30y énekesével találkoztál!</p><p>Beck Zoli: Heló! Ha van egy kis időd, akkor elmesélhetem a házunk történetét, mit szólsz?</p><button onclick='tellStory(true)'>Meghallgatom, Zoli</button><button onclick='tellStory(false)'>Ajaj, ennyi időm azért nincs, bocsi</button>";
         }
 
-        // Implementáld a többi zenész függvényét hasonló módon
+        function tellStory(wantToHear) {
+            if (wantToHear) {
+                document.getElementById('story').innerHTML = "<p>Hát én panel gyerek vagyok, panelbe' nőttem föl, csajom is panel, nem laktunk soha máshol, csak panel lakásba', és állatira akartuk, hogy egyszer legyen egy ilyen házunk.</p>";
+            } else {
+                document.getElementById('story').innerHTML = "<p>Viszlát, Zoli!</p>";
+            }
+        }
+
+        // Implementálj a többi zenész történetét hasonló módon
 
     </script>
 </body>
