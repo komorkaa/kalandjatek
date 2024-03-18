@@ -29,6 +29,20 @@ h1, p, select, button, #story {
     display: inline-block; /* blokkolás megszüntetése, hogy középre igazítás működjön */
 }
 
+select, button {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #007bff; /* Szegélyszín */
+    border-radius: 5px;
+    background-color: #007bff; /* Gombháttérszín */
+    color: #ffffff; /* Szövegszín */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* Gombháttérszín, ha ráviszünk */
+}
+
 /* Reagáló dizájn */
 
 @media (max-width: 768px) {
