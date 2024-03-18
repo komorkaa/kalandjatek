@@ -3,7 +3,7 @@ body {
     background-color: #f3f3f3; /* Általános háttérszín */
     margin: 0;
     padding: 0;
-    background-image: url('hatterkep.jpg'); /* Háttérkép URL-je */
+    background-image: url('hatterkep.png'); /* Háttérkép URL-je */
     background-position: center bottom; /* Háttérkép pozíciója: középen alul */
     background-repeat: no-repeat; /* Háttérkép ne ismétlődjön */
     background-size: cover; /* Háttérkép mérete: kitölti a teljes ablakot */
