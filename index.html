@@ -26,11 +26,6 @@
     <div id="story" style="display:none;"></div>
 
     <script>
-        // Látogatószám növelése és megjelenítése
-        var visitorCount = localStorage.getItem('visitorCount') || 0;
-        visitorCount++;
-        localStorage.setItem('visitorCount', visitorCount);
-        document.write("<p>(Egyébként te vagy az ennyiedik itt csellengő: " + visitorCount + ")</p>");
 
         function showMusicianStory() {
             var musicianChoice = document.getElementById('musician-choice').value;
@@ -123,6 +118,15 @@ function krubitellStory(wantToHear) {
         document.getElementById('story').innerHTML = "<p>Rendben, jó bujkálást!</p>";
     }
 }
+            <div id="visitor-count" style="position: fixed; bottom: 0; right: 10px; background-color: rgba(255, 255, 255, 0.8); padding: 10px;">
+        <script>
+            // Látogatószám növelése és megjelenítése
+            var visitorCount = localStorage.getItem('visitorCount') || 0;
+            visitorCount++;
+            localStorage.setItem('visitorCount', visitorCount);
+            document.write("Egyébként te vagy az ennyiedik itt csellengő: " + visitorCount);
+        </script>
+    </div>
     </script>
 </body>
 </html>
