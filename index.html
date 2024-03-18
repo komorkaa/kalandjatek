@@ -9,81 +9,72 @@
     <h1>Üdvözöllek Komorka Kalandjátékában!</h1>
     <p>Idén végre eljutottál a Fishing on Orfűre, nézzük, kivel futhatsz össze, miközben hajnali kettőkor gyrost vadászol!</p>
     <p>Induljunk el!</p>
-
-    <div id="game">
-        <select id="musician-choice">
-            <option value="1">Beck Zoli (30y)</option>
-            <option value="2">Szendrői Csaba (Elefánt)</option>
-            <option value="3">Bérczesi Robi (hiperkarma)</option>
-            <option value="4">Csepella Olivér (Csaknekedkislány)</option>
-            <option value="5">Krúbi</option>
-        </select>
-        <button onclick="showMusicianStory()">Választ</button>
-    </div>
-
-    <div id="story" style="display:none;"></div>
-
-    <button onclick="backToSelection()" style="display:none;">Vissza a választáshoz</button>
+    <button onclick="startGame()">Kezdés</button>
 
     <script>
-        function showMusicianStory() {
-            var musicianChoice = document.getElementById('musician-choice').value;
+        function startGame() {
+            var playerName = prompt("Kérlek, add meg a neved:");
+            alert("Üdvözöllek, " + playerName + "! Válassz egy frontembert, akivel találkozni szeretnél!");
+            showMusicians();
+        }
+
+        function showMusicians() {
+            var musicians = [
+                "Beck Zoli (30y)",
+                "Szendrői Csaba (Elefánt)",
+                "Bérczesi Robi (hiperkarma)",
+                "Csepella Olivér (Csaknekedkislány)",
+                "Krúbi"
+            ];
+
+            var musicianChoice = prompt("Válassz egy frontembert a következők közül:\n" + musicians.join("\n") + "\n(q - Kilépés)");
 
             switch (musicianChoice) {
                 case '1':
-                    beckZoliStory();
+                    beckZoli();
                     break;
                 case '2':
-                    szendroiCsabaStory();
+                    szendroiCsaba();
                     break;
                 case '3':
-                    berczesiRobiStory();
+                    berczesiRobi();
                     break;
                 case '4':
-                    csepellaOliverStory();
+                    csepellaOliver();
                     break;
                 case '5':
-                    krubiStory();
+                    krubi();
+                    break;
+                case 'q':
+                    alert("Viszlát!");
                     break;
                 default:
                     alert("Nem értem, próbáld újra!");
+                    showMusicians();
             }
         }
 
-        function beckZoliStory() {
-            document.getElementById('story').style.display = "block";
-            document.getElementById('story').innerHTML = "<p>Beck Zolival, a 30y énekesével találkoztál!</p><p>Beck Zoli: Heló! Ha van egy kis időd, akkor elmesélhetem a házunk történetét, mit szólsz?</p><button onclick='tellStory(true)'>Meghallgatom, Zoli</button><button onclick='tellStory(false)'>Ajaj, ennyi időm azért nincs, bocsi</button>";
-            document.getElementById('back-button').style.display = "block";
-        }
+        function beckZoli() {
+            alert("Beck Zolival, a 30y énekesével találkoztál!");
+            var choice = prompt("Beck Zoli: Heló! Ha van egy kis időd, akkor elmesélhetem a házunk történetét, mit szólsz?\n1. Meghallgatom, Zoli\n2. Ajaj, ennyi időm azért nincs, bocsi");
 
-        function tellStory(wantToHear) {
-            if (wantToHear) {
-                document.getElementById('story').innerHTML = "<p>Hát én panel gyerek vagyok, panelbe' nőttem föl, csajom is panel, nem laktunk soha máshol, csak panel lakásba', és állatira akartuk, hogy egyszer legyen egy ilyen házunk.</p>";
-            } else {
-                document.getElementById('story').innerHTML = "<p>Viszlát, Zoli!</p>";
+            switch (choice) {
+                case '1':
+                    alert("Beck Zoli: Hát én panel gyerek vagyok, panelbe' nőttem föl, csajom is panel, nem laktunk soha máshol, csak panel lakásba', és állatira akartuk, hogy egyszer legyen egy ilyen házunk.");
+                    break;
+                case '2':
+                    alert("Viszlát, Zoli!");
+                    break;
+                default:
+                    alert("Nem értem, próbáld újra!");
+                    beckZoli();
             }
+
+            showMusicians();
         }
 
-        function backToSelection() {
-            document.getElementById('story').style.display = "none";
-            document.getElementById('back-button').style.display = "none";
-            document.getElementById('musician-choice').selectedIndex = 0; // Visszaállítjuk a zenész választót az alapértelmezett értékre
-        }
-<script>
-    function szendroiCsabaStory() {
-        document.getElementById('story').style.display = "block";
-        document.getElementById('story').innerHTML = "<p>Szendrői Csabával, az Elefánt énekesével találkoztál!</p><p>Szendrői Csaba: Helló! Mit szólnál, ha felolvasnám neked a kedvenc versem a Féyn című kötetemből?</p><button onclick='tellStory(true)'>Olvasd, Csabi</button><button onclick='tellStory(false)'>Nem vagyok verses kedvemben</button>";
-        document.getElementById('back-button').style.display = "block";
-    }
+        // Implementáld a többi zenész függvényét hasonló módon
 
-    function tellStory(wantToHear) {
-        if (wantToHear) {
-            document.getElementById('story').innerHTML = "<p>Ezt a verset</br>azért írtam,</br>mert hallani akartam</br>sercegni a ceruzát a papíron.</br></br>Ennek a versnek</br>nincs mondanivalója.</br>Ennek a versnek</br>értelme van.</br></br>Na, köszi, hogy benéztél, de most megyek, le kell mosnom Babakéket.</p>";
-        } else {
-            document.getElementById('story').innerHTML = "<p>Viszlát, Csabi!</p>";
-        }
-    }
-</script>
     </script>
 </body>
 </html>
