@@ -25,9 +25,19 @@
     <div id="story" style="display:none;"></div>
 
     <script>
+       // Ellenőrzi, hogy a látogató már korábban meglátogatta-e az oldalt
+        var isNewVisitor = localStorage.getItem('isNewVisitor');
+
+        // Ha az látogató új, akkor növeljük a látogatószámot
+        if (!isNewVisitor) {
+            var visitorCount = localStorage.getItem('visitorCount') || 0;
+            visitorCount++;
+            localStorage.setItem('visitorCount', visitorCount);
+            localStorage.setItem('isNewVisitor', true); // Beállítjuk, hogy a látogató már meglátogatta az oldalt
+        }
+
+        // Kiírjuk a látogatószámot
         var visitorCount = localStorage.getItem('visitorCount') || 0;
-        visitorCount++;
-        localStorage.setItem('visitorCount', visitorCount);
         document.write("<p></br> </br> </br> </br>  </br>  </br> </br> </br> </br> </br> </br> </br> </br> </br> (Egyébként te az ennyiedik itt csellengő vagy: " + visitorCount + ")</p>");
         
         function showMusicianStory() {
