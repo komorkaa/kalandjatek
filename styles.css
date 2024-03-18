@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f3f3f3; /* Általános háttérszín */
+    background-color: #ffffff; /* Általános háttérszín fehérre állítva */
     margin: 0;
     padding: 0;
     background-image: url('hatterkep.png'); /* Háttérkép URL-je alapértelmezett esetben */
@@ -24,7 +24,7 @@ h1, p, select, button, #story {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #ffffff; /* Háttérszín */
+    background-color: #ffffff; /* Háttérszín fehérre állítva */
     color: #333333; /* Szövegszín */
     display: inline-block; /* blokkolás megszüntetése, hogy középre igazítás működjön */
 }
