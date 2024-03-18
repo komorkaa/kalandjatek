@@ -74,7 +74,19 @@
             document.getElementById('story').innerHTML = "<p>Viszlát, Csabi!</p>";
         }
     }
+ function berczesiRobiStory() {
+        document.getElementById('story').style.display = "block";
+        document.getElementById('story').innerHTML = "<p>Bérczesi Robival, a hiperkarma énekesével találkoztál!</p><p>Bérczesi Robi: Szervusz! Eláruljak magamról valamit, amit valószínűleg még nem tudsz?</p><button onclick='tellStory(true)'>Mondd, Robi</button><button onclick='tellStory(false)'>Felejtsd el, nem tudsz olyat mondani, amit ne tudnék</button>";
+        document.getElementById('back-button').style.display = "block";
+    }
 
+    function tellStory(wantToHear) {
+        if (wantToHear) {
+            document.getElementById('story').innerHTML = "<p>5 éves koromban megtanultam írni, ugyanis van egyfajta ilyen madár-és tollfóbiám, és hát a szüleim falun libáztak, kétezer libájuk volt, így aztán az udvarra már eleve esélyem sem volt kimenni. Ezzel töltöttem a gyerekkoromat, ötéves koromtól bezárkóztam a szobámba és egy sci-fi regényen dolgoztam. Egyébként a mai napig nem fejeztem be, megyek is, folytatom.</p>";
+        } else {
+            document.getElementById('story').innerHTML = "<p>Viszlát, Robi!</p>";
+        }
+    }
     </script>
 </body>
 </html>
