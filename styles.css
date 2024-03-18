@@ -3,7 +3,7 @@ body {
     background-color: #f3f3f3; /* Általános háttérszín */
     margin: 0;
     padding: 0;
-    background-image: url('hatterkep.png'); /* Háttérkép URL-je */
+    background-image: url('hatterkep.png'); /* Háttérkép URL-je alapértelmezett esetben */
     background-position: center bottom; /* Háttérkép pozíciója: középen alul */
     background-repeat: no-repeat; /* Háttérkép ne ismétlődjön */
     background-size: contain; /* Háttérkép mérete: kitölti a rendelkezésre álló területet */
@@ -47,12 +47,18 @@ img {
     max-width: 100%; /* Képek max. szélessége 100%-ra állítva */
 }
 
-/* Reagáló dizájn */
-
-@media (max-width: 768px) {
-    /* Telefon nézet */
+/* Számítógép nézet */
+@media (min-width: 769px) {
     body {
-        background-color: #ffffff; /* Más háttérszín telefonon */
+        background-image: url('hatterkep.png'); /* Háttérkép URL-je számítógép nézetben */
+        background-size: cover; /* Háttérkép mérete: kitölti a teljes ablakot */
     }
 }
 
+/* Mobiltelefon nézet */
+@media (max-width: 768px) {
+    body {
+        background-image: url('hatterkep_mobile.png'); /* Háttérkép URL-je mobiltelefon nézetben */
+        background-size: cover; /* Háttérkép mérete: kitölti a teljes ablakot */
+    }
+}
