@@ -4,6 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Komorka Kalandjáték</title>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3; /* Általános háttérszín */
+    margin: 0;
+    padding: 0;
+}
+
+h1, p, select, button {
+    margin: 10px;
+}
+
+#game {
+    margin-top: 20px;
+}
+
+select, button {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #007bff; /* Szegélyszín */
+    border-radius: 5px;
+    background-color: #ffffff; /* Háttérszín */
+    color: #007bff; /* Szövegszín */
+    cursor: pointer;
+}
+
+button {
+    background-color: #007bff; /* Gombháttérszín */
+    color: #ffffff; /* Gombszöveg-szín */
+}
+
+button:hover {
+    background-color: #0056b3; /* Gombháttérszín, ha ráviszünk */
+}
+
+#story {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff; /* Háttérszín */
+    color: #333333; /* Szövegszín */
+}
+
+/* Reagáló dizájn */
+
+@media (max-width: 768px) {
+    /* Telefon nézet */
+    body {
+        background-color: #ffffff; /* Más háttérszín telefonon */
+    }
+}
+
 </head>
 <body>
     <h1>Üdvözöllek Komorka Kalandjátékában!</h1>
