@@ -23,6 +23,8 @@
 
     <div id="story" style="display:none;"></div>
 
+    <button onclick="backToSelection()" style="display:none;">Vissza a választáshoz</button>
+
     <script>
         function showMusicianStory() {
             var musicianChoice = document.getElementById('musician-choice').value;
@@ -51,6 +53,7 @@
         function beckZoliStory() {
             document.getElementById('story').style.display = "block";
             document.getElementById('story').innerHTML = "<p>Beck Zolival, a 30y énekesével találkoztál!</p><p>Beck Zoli: Heló! Ha van egy kis időd, akkor elmesélhetem a házunk történetét, mit szólsz?</p><button onclick='tellStory(true)'>Meghallgatom, Zoli</button><button onclick='tellStory(false)'>Ajaj, ennyi időm azért nincs, bocsi</button>";
+            document.getElementById('back-button').style.display = "block";
         }
 
         function tellStory(wantToHear) {
@@ -61,7 +64,13 @@
             }
         }
 
-        // Implementálj a többi zenész történetét hasonló módon
+        function backToSelection() {
+            document.getElementById('story').style.display = "none";
+            document.getElementById('back-button').style.display = "none";
+            document.getElementById('musician-choice').selectedIndex = 0; // Visszaállítjuk a zenész választót az alapértelmezett értékre
+        }
+
+        // Implementáld a többi zenész történetét és a backToSelection függvényt hasonló módon
 
     </script>
 </body>
