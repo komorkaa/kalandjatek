@@ -24,6 +24,12 @@
     <div id="story" style="display:none;"></div>
 
     <script>
+        // Látogatószám növelése és megjelenítése
+        var visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.write("<p>Te vagy az ennyiedik itt csellengő: " + visitorCount + "</p>");
+
         function showMusicianStory() {
             var musicianChoice = document.getElementById('musician-choice').value;
 
