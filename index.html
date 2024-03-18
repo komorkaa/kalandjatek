@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Komorka Kalandjáték</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <h1>Üdvözöllek Komorka Kalandjátékában!</h1>
@@ -24,6 +25,11 @@
     <div id="story" style="display:none;"></div>
 
     <script>
+        var visitorCount = localStorage.getItem('visitorCount') || 0;
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+        document.write("<p>(Egyébként te az ennyiedik itt csellengő vagy: " + visitorCount + ")</p>");
+        
         function showMusicianStory() {
             var musicianChoice = document.getElementById('musician-choice').value;
 
