@@ -9,38 +9,14 @@ body {
     background-size: cover; /* Háttérkép mérete: kitölti a teljes ablakot */
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f3f3; /* Általános háttérszín */
-    margin: 0;
-    padding: 0;
-}
-
-h1, p, select, button {
-    margin: 10px;
+h1, p, select, button, #story {
+    margin: 10px auto; /* középre igazítás */
+    text-align: center; /* szöveg középre igazítása */
 }
 
 #game {
     margin-top: 20px;
-}
-
-select, button {
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #007bff; /* Szegélyszín */
-    border-radius: 5px;
-    background-color: #ffffff; /* Háttérszín */
-    color: #007bff; /* Szövegszín */
-    cursor: pointer;
-}
-
-button {
-    background-color: #007bff; /* Gombháttérszín */
-    color: #ffffff; /* Gombszöveg-szín */
-}
-
-button:hover {
-    background-color: #0056b3; /* Gombháttérszín, ha ráviszünk */
+    text-align: center; /* gombok középre igazítása */
 }
 
 #story {
@@ -50,6 +26,7 @@ button:hover {
     border-radius: 5px;
     background-color: #ffffff; /* Háttérszín */
     color: #333333; /* Szövegszín */
+    display: inline-block; /* blokkolás megszüntetése, hogy középre igazítás működjön */
 }
 
 /* Reagáló dizájn */
